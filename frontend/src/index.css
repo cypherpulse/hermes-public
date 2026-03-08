@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hermes Bridge Design System - Professional & Corporate */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 20% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+
+    --primary: 220 70% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 94%;
+    --secondary-foreground: 220 20% 10%;
+
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 220 15% 94%;
+    --accent-foreground: 220 20% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 220 70% 50%;
+
+    --radius: 0.75rem;
+
+    /* Hermes Brand Colors */
+    --mainnet-gold: 43 96% 56%;
+    --mainnet-gold-foreground: 43 96% 10%;
+    --mainnet-amber: 38 92% 50%;
+    --mainnet-gradient-start: 43 96% 56%;
+    --mainnet-gradient-end: 38 92% 50%;
+
+    --testnet-blue: 220 90% 56%;
+    --testnet-blue-foreground: 0 0% 100%;
+    --testnet-purple: 260 80% 60%;
+    --testnet-gradient-start: 220 90% 56%;
+    --testnet-gradient-end: 260 80% 60%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 38 92% 10%;
+
+    --info: 220 90% 56%;
+    --info-foreground: 0 0% 100%;
+
+    /* Chain-specific colors */
+    --chain-ethereum: 226 100% 59%;
+    --chain-base: 221 100% 50%;
+    --chain-arbitrum: 202 89% 53%;
+    --chain-avalanche: 0 73% 57%;
+    --chain-polygon: 263 70% 58%;
+    --chain-optimism: 0 100% 50%;
+    --chain-linea: 189 100% 69%;
+    --chain-unichain: 330 100% 49%;
+    --chain-world: 16 100% 60%;
+    --chain-stacks: 16 100% 50%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 220 20% 10%;
+    --sidebar-primary: 220 70% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 94%;
+    --sidebar-accent-foreground: 220 20% 10%;
+    --sidebar-border: 220 15% 90%;
+    --sidebar-ring: 220 70% 50%;
+  }
+
+  .dark {
+    --background: 220 25% 6%;
+    --foreground: 220 15% 95%;
+
+    --card: 220 25% 9%;
+    --card-foreground: 220 15% 95%;
+
+    --popover: 220 25% 9%;
+    --popover-foreground: 220 15% 95%;
+
+    --primary: 220 70% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 20% 15%;
+    --secondary-foreground: 220 15% 95%;
+
+    --muted: 220 20% 15%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 220 20% 15%;
+    --accent-foreground: 220 15% 95%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 18%;
+    --input: 220 20% 18%;
+    --ring: 220 70% 55%;
+
+    /* Hermes Brand Colors - Dark Mode */
+    --mainnet-gold: 43 96% 50%;
+    --mainnet-gold-foreground: 0 0% 100%;
+    --mainnet-amber: 38 92% 45%;
+
+    --testnet-blue: 220 90% 60%;
+    --testnet-blue-foreground: 0 0% 100%;
+    --testnet-purple: 260 80% 65%;
+
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --sidebar-background: 220 25% 8%;
+    --sidebar-foreground: 220 15% 95%;
+    --sidebar-primary: 220 70% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 20% 15%;
+    --sidebar-accent-foreground: 220 15% 95%;
+    --sidebar-border: 220 20% 18%;
+    --sidebar-ring: 220 70% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .gradient-mainnet {
+    @apply bg-gradient-to-br from-[hsl(var(--mainnet-gold))] to-[hsl(var(--mainnet-amber))];
+  }
+
+  .gradient-testnet {
+    @apply bg-gradient-to-br from-[hsl(var(--testnet-blue))] to-[hsl(var(--testnet-purple))];
+  }
+
+  .border-mainnet {
+    @apply border-[hsl(var(--mainnet-gold)/0.3)];
+  }
+
+  .border-testnet {
+    @apply border-[hsl(var(--testnet-blue)/0.3)];
+  }
+
+  .glow-mainnet {
+    box-shadow: 0 0 40px -10px hsl(var(--mainnet-gold) / 0.4);
+  }
+
+  .glow-testnet {
+    box-shadow: 0 0 40px -10px hsl(var(--testnet-blue) / 0.4);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
